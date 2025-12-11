@@ -1,0 +1,23 @@
+[versions]
+io-github-openfeign-feign-okhttp = "13.6"
+io-sentry-sentry-spring-boot-starter-jakarta = "8.17.0"
+org-apache-pdfbox-pdfbox = "3.0.5"
+org-imgscalr-imgscalr-lib = "4.2"
+org-mapstruct-mapstruct = "1.6.3"
+org-springframework-boot-spring-boot-starter-data-jpa = "3.5.0"
+org-springframework-boot-spring-boot-starter-validation = "3.5.0"
+org-springframework-boot-spring-boot-starter-web = "3.5.0"
+org-springframework-cloud-spring-cloud-starter-openfeign = "4.3.0"
+org-springframework-spring-websocket = "6.2.7"
+
+[libraries]
+io-github-openfeign-feign-okhttp = { module = "io.github.openfeign:feign-okhttp", version.ref = "io-github-openfeign-feign-okhttp" }
+io-sentry-sentry-spring-boot-starter-jakarta = { module = "io.sentry:sentry-spring-boot-starter-jakarta", version.ref = "io-sentry-sentry-spring-boot-starter-jakarta" }
+org-apache-pdfbox-pdfbox = { module = "org.apache.pdfbox:pdfbox", version.ref = "org-apache-pdfbox-pdfbox" }
+org-imgscalr-imgscalr-lib = { module = "org.imgscalr:imgscalr-lib", version.ref = "org-imgscalr-imgscalr-lib" }
+org-mapstruct-mapstruct = { module = "org.mapstruct:mapstruct", version.ref = "org-mapstruct-mapstruct" }
+org-springframework-boot-spring-boot-starter-data-jpa = { module = "org.springframework.boot:spring-boot-starter-data-jpa", version.ref = "org-springframework-boot-spring-boot-starter-data-jpa" }
+org-springframework-boot-spring-boot-starter-validation = { module = "org.springframework.boot:spring-boot-starter-validation", version.ref = "org-springframework-boot-spring-boot-starter-validation" }
+org-springframework-boot-spring-boot-starter-web = { module = "org.springframework.boot:spring-boot-starter-web", version.ref = "org-springframework-boot-spring-boot-starter-web" }
+org-springframework-cloud-spring-cloud-starter-openfeign = { module = "org.springframework.cloud:spring-cloud-starter-openfeign", version.ref = "org-springframework-cloud-spring-cloud-starter-openfeign" }
+org-springframework-spring-websocket = { module = "org.springframework:spring-websocket", version.ref = "org-springframework-spring-websocket" }

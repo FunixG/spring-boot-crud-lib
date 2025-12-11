@@ -25,7 +25,6 @@
         <module>test-utils</module>
         <module>tools</module>
         <module>storage</module>
-        <module>integrations</module>
     </modules>
 
     <properties>
