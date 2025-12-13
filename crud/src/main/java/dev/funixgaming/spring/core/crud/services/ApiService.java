@@ -22,8 +22,8 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.data.jpa.domain.Specification;
-import org.springframework.lang.Nullable;
 
+import javax.annotation.Nullable;
 import java.lang.reflect.Field;
 import java.time.Instant;
 import java.util.*;
@@ -46,7 +46,13 @@ public abstract class ApiService<DTO extends ApiDTO,
         try {
             final Specification<ENTITY> specificationSearch = getSpecification(search);
             final Pageable pageable = getPage(page, elemsPerPage, sort);
-            final Page<DTO> toReturn = repository.findAll(specificationSearch, pageable).map(mapper::toDto);
+            final Page<DTO> toReturn;
+
+            if (specificationSearch == null) {
+                toReturn = repository.findAll(pageable).map(mapper::toDto);
+            } else {
+                toReturn = repository.findAll(specificationSearch, pageable).map(mapper::toDto);
+            }
 
             beforeSendingDTO(toReturn.getContent());
             return new PageDTO<>(toReturn);

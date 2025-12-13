@@ -7,8 +7,8 @@ import dev.funixgaming.spring.core.storage.services.ApiStorageService;
 import dev.funixgaming.spring.core.test.beans.JsonHelper;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.boot.webmvc.test.autoconfigure.AutoConfigureMockMvc;
 import org.springframework.http.MediaType;
 import org.springframework.mock.web.MockMultipartFile;
 import org.springframework.test.web.servlet.MockMvc;
@@ -238,7 +238,7 @@ class ApiStorageResourceTest {
 
         final byte[] bytes = ApiStorageService.createThumbnailFromImage(testImage, 30);
 
-        File outputFile = new File("./target/test.jpeg");
+        File outputFile = new File("./build/test.jpeg");
         try (FileOutputStream fos = new FileOutputStream(outputFile)) {
             fos.write(bytes);
         }

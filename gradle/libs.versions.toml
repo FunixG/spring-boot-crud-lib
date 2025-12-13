@@ -1,23 +1,19 @@
 [versions]
-io-github-openfeign-feign-okhttp = "13.6"
-io-sentry-sentry-spring-boot-starter-jakarta = "8.17.0"
-org-apache-pdfbox-pdfbox = "3.0.5"
+# https://mvnrepository.com/artifact/org.mapstruct/mapstruct
+org-mapstruct = "1.6.3"
+# https://mvnrepository.com/artifact/com.google.guava/guava
+com-google-guava = "33.5.0-jre"
+# https://mvnrepository.com/artifact/org.imgscalr/imgscalr-lib
 org-imgscalr-imgscalr-lib = "4.2"
-org-mapstruct-mapstruct = "1.6.3"
-org-springframework-boot-spring-boot-starter-data-jpa = "3.5.0"
-org-springframework-boot-spring-boot-starter-validation = "3.5.0"
-org-springframework-boot-spring-boot-starter-web = "3.5.0"
-org-springframework-cloud-spring-cloud-starter-openfeign = "4.3.0"
-org-springframework-spring-websocket = "6.2.7"
+# https://mvnrepository.com/artifact/com.google.code.gson/gson
+com-google-code-gson = "2.13.2"
 
 [libraries]
-io-github-openfeign-feign-okhttp = { module = "io.github.openfeign:feign-okhttp", version.ref = "io-github-openfeign-feign-okhttp" }
-io-sentry-sentry-spring-boot-starter-jakarta = { module = "io.sentry:sentry-spring-boot-starter-jakarta", version.ref = "io-sentry-sentry-spring-boot-starter-jakarta" }
-org-apache-pdfbox-pdfbox = { module = "org.apache.pdfbox:pdfbox", version.ref = "org-apache-pdfbox-pdfbox" }
+org-mapstruct = { module = "org.mapstruct:mapstruct", version.ref = "org-mapstruct" }
+org-mapstruct-processor = { module = "org.mapstruct:mapstruct-processor", version.ref = "org-mapstruct" }
+
+com-google-guava = { module = "com.google.guava:guava", version.ref = "com-google-guava" }
+
 org-imgscalr-imgscalr-lib = { module = "org.imgscalr:imgscalr-lib", version.ref = "org-imgscalr-imgscalr-lib" }
-org-mapstruct-mapstruct = { module = "org.mapstruct:mapstruct", version.ref = "org-mapstruct-mapstruct" }
-org-springframework-boot-spring-boot-starter-data-jpa = { module = "org.springframework.boot:spring-boot-starter-data-jpa", version.ref = "org-springframework-boot-spring-boot-starter-data-jpa" }
-org-springframework-boot-spring-boot-starter-validation = { module = "org.springframework.boot:spring-boot-starter-validation", version.ref = "org-springframework-boot-spring-boot-starter-validation" }
-org-springframework-boot-spring-boot-starter-web = { module = "org.springframework.boot:spring-boot-starter-web", version.ref = "org-springframework-boot-spring-boot-starter-web" }
-org-springframework-cloud-spring-cloud-starter-openfeign = { module = "org.springframework.cloud:spring-cloud-starter-openfeign", version.ref = "org-springframework-cloud-spring-cloud-starter-openfeign" }
-org-springframework-spring-websocket = { module = "org.springframework:spring-websocket", version.ref = "org-springframework-spring-websocket" }
+
+com-google-code-gson = { module = "com.google.code.gson:gson", version.ref = "com-google-code-gson" }

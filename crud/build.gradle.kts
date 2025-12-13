@@ -5,13 +5,13 @@ plugins {
 dependencies {
     api(project(":exceptions"))
     api(project(":tools"))
-    api(libs.org.springframework.boot.spring.boot.starter.data.jpa)
-    api(libs.org.springframework.boot.spring.boot.starter.validation)
-    api(libs.org.springframework.cloud.spring.cloud.starter.openfeign)
-    api(libs.org.springframework.boot.spring.boot.starter.web)
-    api(libs.org.mapstruct.mapstruct)
-    api(libs.io.github.openfeign.feign.okhttp)
     testImplementation(project(":test-utils"))
+
+    implementation(libs.org.mapstruct)
+    annotationProcessor(libs.org.mapstruct.processor)
+    testImplementation(libs.org.mapstruct)
+    testAnnotationProcessor(libs.org.mapstruct.processor)
+    api(libs.com.google.guava)
 }
 
 group = "dev.funixgaming.spring.core.crud"

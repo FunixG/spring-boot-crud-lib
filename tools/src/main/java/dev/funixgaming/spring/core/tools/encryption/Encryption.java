@@ -1,7 +1,7 @@
 package dev.funixgaming.spring.core.tools.encryption;
 
-import dev.funixgaming.spring.core.exceptions.ApiException;
 import com.google.common.base.Strings;
+import dev.funixgaming.spring.core.exceptions.ApiException;
 
 import javax.crypto.*;
 import javax.crypto.spec.GCMParameterSpec;
