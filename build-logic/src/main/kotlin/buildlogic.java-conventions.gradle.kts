@@ -1,11 +1,12 @@
 plugins {
     `java-library`
+    `maven-publish`
     id("org.springframework.boot")
     id("io.spring.dependency-management")
 }
 
 group = "dev.funixgaming.spring.core"
-version = "1.2.7"
+version = "1.3.0"
 
 extra["springCloudVersion"] = "2025.1.0"
 java.sourceCompatibility = JavaVersion.VERSION_25
@@ -52,4 +53,23 @@ dependencyManagement {
 
 tasks.withType<Test> {
     useJUnitPlatform()
+}
+
+publishing {
+    repositories {
+        maven {
+            name = "GitHubPackages"
+            url = uri("https://maven.pkg.github.com/FunixG/spring-boot-crud-lib")
+            credentials {
+                username = "FunixG"
+                password = System.getenv("GITHUB_TOKEN")
+            }
+        }
+    }
+
+    publications {
+        register<MavenPublication>("gpr") {
+            from(components["java"])
+        }
+    }
 }

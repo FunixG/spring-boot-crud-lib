@@ -1,10 +1,9 @@
-name: Gradle build & Test
+name: Gradle Publish package
 
 on:
-  push:
-    branches: [ master, develop ]
-  pull_request:
-    branches: [ master, develop ]
+  release:
+    types:
+      - created
 
 jobs:
   build:
@@ -21,8 +20,9 @@ jobs:
           java-version: '25'
           distribution: 'temurin'
 
-      - name: Build with Gradle
+      - name: Publish with Gradle
         env:
           ENCRYPTION_KEY: hwJdNY1/yC3miXQR+Vw2V3qtt1e3FPJ2y62BKtROUJs=
           ENCRYPTION_IV: DKKyySzj8ao5WgraQpwj+A==
-        run: ./gradlew test
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: ./gradlew publish
