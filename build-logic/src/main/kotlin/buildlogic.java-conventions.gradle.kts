@@ -1,5 +1,6 @@
 plugins {
     `java-library`
+    `maven-publish`
     id("org.springframework.boot")
     id("io.spring.dependency-management")
 }
@@ -52,4 +53,34 @@ dependencyManagement {
 
 tasks.withType<Test> {
     useJUnitPlatform()
+}
+
+publishing {
+    repositories {
+        maven {
+            name = "GitHubPackages"
+            url = uri("https://maven.pkg.github.com/FunixG/spring-boot-crud-lib")
+            credentials {
+                username = "FunixG"
+                password = System.getenv("GITHUB_TOKEN")
+            }
+        }
+    }
+
+    publications {
+        create<MavenPublication>("mavenJava") {
+            versionMapping {
+                usage("java-api") {
+                    fromResolutionOf("runtimeClasspath")
+                }
+                usage("java-runtime") {
+                    fromResolutionResult()
+                }
+            }
+        }
+
+        register<MavenPublication>("gpr") {
+            from(components["java"])
+        }
+    }
 }
