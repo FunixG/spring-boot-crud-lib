@@ -6,7 +6,7 @@ plugins {
 }
 
 group = "dev.funixgaming.spring.core"
-version = "1.3.2"
+version = "1.3.3"
 
 extra["springCloudVersion"] = "2025.1.0"
 java.sourceCompatibility = JavaVersion.VERSION_25
