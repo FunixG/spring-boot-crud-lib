@@ -69,6 +69,8 @@ publishing {
 
     publications {
         create<MavenPublication>("mavenJava") {
+            from(components["java"])
+
             versionMapping {
                 usage("java-api") {
                     fromResolutionOf("runtimeClasspath")
