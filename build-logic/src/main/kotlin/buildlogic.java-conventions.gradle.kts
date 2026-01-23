@@ -6,7 +6,7 @@ plugins {
 }
 
 group = "dev.funixgaming.spring.core"
-version = "1.3.1"
+version = "1.3.2"
 
 extra["springCloudVersion"] = "2025.1.0"
 java.sourceCompatibility = JavaVersion.VERSION_25
@@ -55,6 +55,10 @@ tasks.withType<Test> {
     useJUnitPlatform()
 }
 
+tasks.withType<Jar> {
+    enabled = true
+}
+
 publishing {
     repositories {
         maven {
@@ -79,10 +83,6 @@ publishing {
                     fromResolutionResult()
                 }
             }
-        }
-
-        register<MavenPublication>("gpr") {
-            from(components["java"])
         }
     }
 }
