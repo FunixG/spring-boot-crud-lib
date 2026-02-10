@@ -8,10 +8,11 @@ description = "storage"
 dependencies {
     api(project(":crud"))
     api(project(":test-utils"))
-    implementation(libs.org.mapstruct)
+    api(libs.org.mapstruct)
     testImplementation(libs.org.mapstruct)
     annotationProcessor(libs.org.mapstruct.processor)
     testAnnotationProcessor(libs.org.mapstruct.processor)
+
     implementation(libs.org.imgscalr.imgscalr.lib)
 }
 

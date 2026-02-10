@@ -7,8 +7,8 @@ description = "tools"
 
 dependencies {
     api(project(":exceptions"))
-    implementation(libs.com.google.guava)
-    implementation("org.springframework.boot:spring-boot-starter-websocket")
+    api(libs.com.google.guava)
+    api("org.springframework.boot:spring-boot-starter-websocket")
 }
 
 java {
