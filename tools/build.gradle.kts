@@ -1,5 +1,5 @@
 plugins {
-    id("buildlogic.java-conventions")
+    id("buildlogic-spring-core-funix.java-conventions")
 }
 
 group = "dev.funixgaming.spring.core.tools"
@@ -9,8 +9,4 @@ dependencies {
     api(project(":exceptions"))
     api(libs.com.google.guava)
     api("org.springframework.boot:spring-boot-starter-websocket")
-}
-
-java {
-    withJavadocJar()
 }

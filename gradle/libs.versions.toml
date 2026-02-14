@@ -7,6 +7,14 @@ com-google-guava = "33.5.0-jre"
 org-imgscalr-imgscalr-lib = "4.2"
 # https://mvnrepository.com/artifact/com.google.code.gson/gson
 com-google-code-gson = "2.13.2"
+# https://plugins.gradle.org/plugin/io.spring.dependency-management
+spring-dependency-management-plugin = "1.1.0"
+# https://spring.io/projects/spring-boot
+spring-boot-gradle-plugin = "4.0.2"
+# https://spring.io/projects/spring-cloud
+spring-cloud-dependencies = "2025.1.1"
+# https://plugins.gradle.org/plugin/org.flywaydb.flyway
+flyway-gradle-plugin = "12.0.1"
 
 [libraries]
 org-mapstruct = { module = "org.mapstruct:mapstruct", version.ref = "org-mapstruct" }
@@ -17,3 +25,8 @@ com-google-guava = { module = "com.google.guava:guava", version.ref = "com-googl
 org-imgscalr-imgscalr-lib = { module = "org.imgscalr:imgscalr-lib", version.ref = "org-imgscalr-imgscalr-lib" }
 
 com-google-code-gson = { module = "com.google.code.gson:gson", version.ref = "com-google-code-gson" }
+
+io-spring-dependency-management-plugin = { module = "io.spring.gradle:dependency-management-plugin", version.ref = "spring-dependency-management-plugin" }
+org-spring-boot-gradle-plugin = { module = "org.springframework.boot:spring-boot-gradle-plugin", version.ref = "spring-boot-gradle-plugin" }
+
+org-flywaydb-flyway-gradle-plugin = { module = "org.flywaydb:flyway-gradle-plugin", version.ref = "flyway-gradle-plugin" }

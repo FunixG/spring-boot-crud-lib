@@ -5,11 +5,13 @@ plugins {
     id("io.spring.dependency-management")
 }
 
+val libs = extensions.getByType<VersionCatalogsExtension>().named("libs")
+
 group = "dev.funixgaming.spring.core"
-version = "1.3.4"
+version = "1.3.5"
 
 // https://spring.io/projects/spring-cloud
-extra["springCloudVersion"] = "2025.1.1"
+extra["springCloudVersion"] = libs.findVersion("spring.cloud.dependencies").get().toString()
 java.sourceCompatibility = JavaVersion.VERSION_25
 
 java {
@@ -86,6 +88,10 @@ publishing {
                     fromResolutionResult()
                 }
             }
+        }
+
+        create<MavenPublication>("pluginMaven") {
+            from(components["java"])
         }
     }
 }

@@ -1,5 +1,5 @@
 plugins {
-    id("buildlogic.java-conventions")
+    id("buildlogic-spring-core-funix.java-conventions")
 }
 
 group = "dev.funixgaming.spring.core.test"
@@ -7,8 +7,4 @@ description = "test-utils"
 
 dependencies {
     implementation(libs.com.google.code.gson)
-}
-
-java {
-    withJavadocJar()
 }
