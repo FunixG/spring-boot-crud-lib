@@ -8,7 +8,7 @@ plugins {
 val libs = extensions.getByType<VersionCatalogsExtension>().named("libs")
 
 group = "dev.funixgaming.spring.core"
-version = "1.3.5"
+version = libs.findVersion("project.version").get().toString()
 
 // https://spring.io/projects/spring-cloud
 extra["springCloudVersion"] = libs.findVersion("spring.cloud.dependencies").get().toString()

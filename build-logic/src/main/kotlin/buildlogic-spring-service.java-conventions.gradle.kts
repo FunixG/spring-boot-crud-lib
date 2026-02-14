@@ -4,6 +4,9 @@ plugins {
 
 val libs = extensions.getByType<VersionCatalogsExtension>().named("libs")
 
+group = "dev.funixgaming.spring.core.plugins.service"
+version = libs.findVersion("project.version").get().toString()
+
 dependencies {
     api(project(":exceptions"))
     api(project(":tools"))
