@@ -89,9 +89,5 @@ publishing {
                 }
             }
         }
-
-        create<MavenPublication>("pluginMaven") {
-            from(components["java"])
-        }
     }
 }
