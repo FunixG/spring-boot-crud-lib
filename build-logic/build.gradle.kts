@@ -31,4 +31,10 @@ publishing {
             }
         }
     }
+
+    publications {
+        create<MavenPublication>("pluginMaven") {
+            from(components["java"])
+        }
+    }
 }
