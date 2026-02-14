@@ -20,23 +20,6 @@ dependencies {
     implementation(libs.findLibrary("org.flywaydb.flyway.gradle.plugin").get())
 }
 
-gradlePlugin {
-    plugins {
-        create("buildlogic-spring-core-funix.java-conventions") {
-            id = "buildlogic-spring-core-funix.java-conventions"
-            implementationClass = "dev.funixgaming.spring.core.plugins.common.JavaConventionsPlugin"
-        }
-        create("buildlogic-spring-service.java-conventions") {
-            id = "buildlogic-spring-service.java-conventions"
-            implementationClass = "dev.funixgaming.spring.core.plugins.service.JavaConventionsPlugin"
-        }
-        create("buildlogic-spring-postgres-service.java-conventions") {
-            id = "buildlogic-spring-postgres-service.java-conventions"
-            implementationClass = "dev.funixgaming.spring.core.plugins.postgres.JavaConventionsPlugin"
-        }
-    }
-}
-
 publishing {
     repositories {
         maven {
