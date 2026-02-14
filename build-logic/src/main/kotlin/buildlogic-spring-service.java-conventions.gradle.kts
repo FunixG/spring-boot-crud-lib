@@ -8,10 +8,6 @@ group = "dev.funixgaming.spring.core.plugins.service"
 version = libs.findVersion("project.version").get().toString()
 
 dependencies {
-    api(project(":exceptions"))
-    api(project(":tools"))
-    testImplementation(project(":test-utils"))
-
     implementation(libs.findLibrary("org.mapstruct").get())
     testImplementation(libs.findLibrary("org.mapstruct").get())
 
