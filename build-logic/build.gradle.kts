@@ -3,6 +3,8 @@ plugins {
     `maven-publish`
 }
 
+group = "dev.funixgaming.spring"
+
 repositories {
     gradlePluginPortal()
     mavenCentral()
