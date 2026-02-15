@@ -4,6 +4,7 @@ plugins {
 }
 
 group = "dev.funixgaming.spring"
+version = "1.4.0"
 
 repositories {
     gradlePluginPortal()
