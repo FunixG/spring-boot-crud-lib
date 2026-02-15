@@ -1,5 +1,5 @@
 plugins {
-    id("buildlogic-spring-core-funix.java-conventions")
+    id("dev.funixgaming.spring.conventions")
 }
 
 group = "dev.funixgaming.spring.core.test"

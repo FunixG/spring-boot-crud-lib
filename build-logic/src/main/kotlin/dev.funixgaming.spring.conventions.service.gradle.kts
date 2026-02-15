@@ -1,10 +1,10 @@
 plugins {
-    id("buildlogic-spring-core-funix.java-conventions")
+    id("dev.funixgaming.spring.conventions")
 }
 
 val libs = extensions.getByType<VersionCatalogsExtension>().named("libs")
 
-group = "dev.funixgaming.spring.core.plugins.service"
+group = "dev.funixgaming.spring.conventions.service"
 version = libs.findVersion("project.version").get().toString()
 
 dependencies {

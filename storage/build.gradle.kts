@@ -1,5 +1,5 @@
 plugins {
-    id("buildlogic-spring-service.java-conventions")
+    id("dev.funixgaming.spring.conventions.service")
 }
 
 group = "dev.funixgaming.spring.core.storage"
