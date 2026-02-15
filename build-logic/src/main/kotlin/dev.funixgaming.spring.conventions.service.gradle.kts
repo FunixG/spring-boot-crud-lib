@@ -2,17 +2,15 @@ plugins {
     id("dev.funixgaming.spring.conventions")
 }
 
-val libs = extensions.getByType<VersionCatalogsExtension>().named("libs")
-
 group = "dev.funixgaming.spring.conventions.service"
-version = libs.findVersion("project.version").get().toString()
+version = Versions.projectVersion
 
 dependencies {
-    implementation(libs.findLibrary("org.mapstruct").get())
-    testImplementation(libs.findLibrary("org.mapstruct").get())
+    implementation("org.mapstruct:mapstruct:${Versions.orgMapStructVersion}")
+    testImplementation("org.mapstruct:mapstruct:${Versions.orgMapStructVersion}")
 
-    annotationProcessor(libs.findLibrary("org.mapstruct.processor").get())
-    testAnnotationProcessor(libs.findLibrary("org.mapstruct.processor").get())
+    annotationProcessor("org.mapstruct:mapstruct-processor:${Versions.orgMapStructVersion}")
+    testAnnotationProcessor("org.mapstruct:mapstruct-processor:${Versions.orgMapStructVersion}")
 
-    api(libs.findLibrary("com.google.guava").get())
+    api("com.google.guava:guava:${Versions.comGoogleGuavaVersion}")
 }

@@ -6,5 +6,5 @@ group = "dev.funixgaming.spring.core.test"
 description = "test-utils"
 
 dependencies {
-    implementation(libs.com.google.code.gson)
+    implementation("com.google.code.gson:gson:${Versions.comGoogleGsonVersion}")
 }

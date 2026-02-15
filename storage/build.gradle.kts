@@ -11,5 +11,5 @@ dependencies {
     api(project(":tools"))
     testImplementation(project(":test-utils"))
 
-    implementation(libs.org.imgscalr.imgscalr.lib)
+    implementation("org.imgscalr:imgscalr-lib:${Versions.imageScalerVersion}")
 }

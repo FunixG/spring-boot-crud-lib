@@ -5,13 +5,11 @@ plugins {
     id("io.spring.dependency-management")
 }
 
-val libs = extensions.getByType<VersionCatalogsExtension>().named("libs")
-
 group = "dev.funixgaming.spring.conventions"
-version = libs.findVersion("project.version").get().toString()
+version = Versions.projectVersion
 
 // https://spring.io/projects/spring-cloud
-extra["springCloudVersion"] = libs.findVersion("spring.cloud.dependencies").get().toString()
+extra["springCloudVersion"] = Versions.springCloudVersion
 java.sourceCompatibility = JavaVersion.VERSION_25
 
 java {

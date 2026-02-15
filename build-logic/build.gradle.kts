@@ -9,33 +9,20 @@ repositories {
     mavenLocal()
 }
 
-val libs = extensions.getByType<VersionCatalogsExtension>().named("libs")
-
-group = "dev.funixgaming.spring.core.plugins"
-version = libs.findVersion("project.version").get().toString()
-
-dependencies {
-    implementation(libs.findLibrary("io.spring.dependency.management.plugin").get())
-    implementation(libs.findLibrary("org.spring.boot.gradle.plugin").get())
-    implementation(libs.findLibrary("org.flywaydb.flyway.gradle.plugin").get())
+object Versions {
+    // https://plugins.gradle.org/plugin/io.spring.dependency-management
+    const val springDependencyManagementPluginVersion = "1.1.0"
+    // https://spring.io/projects/spring-boot
+    const val springBootVersion = "4.0.2"
+    // https://plugins.gradle.org/plugin/org.flywaydb.flyway
+    const val flywayPluginVersion = "12.0.1"
 }
 
-/*gradlePlugin {
-    plugins {
-        create("springConventions") {
-            id = "dev.funixgaming.spring.conventions"
-            implementationClass = "Dev_funixgaming_spring_conventionsPlugin"
-        }
-        create("springConventionsService") {
-            id = "dev.funixgaming.spring.conventions.service"
-            implementationClass = "Dev_funixgaming_spring_conventions_servicePlugin"
-        }
-        create("springConventionsPostgres") {
-            id = "dev.funixgaming.spring.conventions.postgres"
-            implementationClass = "Dev_funixgaming_spring_conventions_postgresPlugin"
-        }
-    }
-}*/
+dependencies {
+    implementation("io.spring.gradle:dependency-management-plugin:${Versions.springDependencyManagementPluginVersion}")
+    implementation("org.springframework.boot:spring-boot-gradle-plugin:${Versions.springBootVersion}")
+    implementation("org.flywaydb:flyway-gradle-plugin:${Versions.flywayPluginVersion}")
+}
 
 publishing {
     repositories {
