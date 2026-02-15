@@ -20,7 +20,7 @@ dependencies {
     implementation(libs.findLibrary("org.flywaydb.flyway.gradle.plugin").get())
 }
 
-gradlePlugin {
+/*gradlePlugin {
     plugins {
         create("springConventions") {
             id = "dev.funixgaming.spring.conventions"
@@ -35,7 +35,7 @@ gradlePlugin {
             implementationClass = "Dev_funixgaming_spring_conventions_postgresPlugin"
         }
     }
-}
+}*/
 
 publishing {
     repositories {
