@@ -1,23 +1,4 @@
-# spring-core
+# Spring Core - Crud library for spring projects
 
-Spring core package for spring projects
+My own library helping me to create spring projects faster, with a lot of useful features and utilities.
 
-[![Maven build & Test](https://github.com/FunixProductions/spring-core/actions/workflows/test-build.yml/badge.svg?branch=master)](https://github.com/FunixProductions/spring-core/actions/workflows/test-build.yml)
-
-### Importing project
-
-Lien du repository Maven : [FunixProductions - Core spring package](https://mvn.funixproductions.com/#/releases/com/funixproductions/core)
-
-```xml
-<parent>
-    <groupId>com.funixproductions.core</groupId>
-    <artifactId>funixproductions-core</artifactId>
-    <version>1.2.7</version>
-</parent>
-
-<repository>
-    <id>funixproductions-repository-releases</id>
-    <name>FunixProductions Repository</name>
-    <url>https://mvn.funixproductions.com/releases</url>
-</repository>
-```

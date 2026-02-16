@@ -13,4 +13,6 @@ dependencies {
     testAnnotationProcessor("org.mapstruct:mapstruct-processor:${Versions.orgMapStructVersion}")
 
     api("com.google.guava:guava:${Versions.comGoogleGuavaVersion}")
+
+    api("org.springframework.boot:spring-boot-starter-actuator")
 }
