@@ -4,6 +4,7 @@ import dev.funixgaming.spring.core.crud.clients.CrudClient;
 import dev.funixgaming.spring.core.storage.dtos.ApiStorageFileDTO;
 import jakarta.validation.Valid;
 import org.springframework.core.io.Resource;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -26,6 +27,6 @@ public interface StorageCrudClient<DTO extends ApiStorageFileDTO> extends CrudCl
     DTO updateFull(@RequestPart("dto") @Valid DTO dto, @RequestPart("file") MultipartFile file);
 
     @GetMapping("/file/{id}")
-    Resource loadAsResource(@PathVariable("id") String id);
+    ResponseEntity<Resource> loadAsResource(@PathVariable("id") String id);
 
 }

@@ -4,6 +4,7 @@ import dev.funixgaming.spring.core.crud.resources.ApiResource;
 import dev.funixgaming.spring.core.storage.clients.StorageCrudClient;
 import dev.funixgaming.spring.core.storage.dtos.ApiStorageFileDTO;
 import org.springframework.core.io.Resource;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.multipart.MultipartFile;
 
 public abstract class ApiStorageResource<DTO extends ApiStorageFileDTO, SERVICE extends StorageCrudClient<DTO>> extends ApiResource<DTO, SERVICE> implements StorageCrudClient<DTO> {
@@ -28,7 +29,7 @@ public abstract class ApiStorageResource<DTO extends ApiStorageFileDTO, SERVICE 
     }
 
     @Override
-    public Resource loadAsResource(String id) {
+    public ResponseEntity<Resource> loadAsResource(String id) {
         return super.getService().loadAsResource(id);
     }
 }

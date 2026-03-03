@@ -17,6 +17,8 @@ import lombok.extern.slf4j.Slf4j;
 import org.imgscalr.Scalr;
 import org.springframework.core.io.ByteArrayResource;
 import org.springframework.core.io.Resource;
+import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
 import org.springframework.lang.Nullable;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.web.multipart.MultipartFile;
@@ -45,7 +47,7 @@ public abstract class ApiStorageService<DTO extends ApiStorageFileDTO,
     private static final String STORAGE_DIRECTORY = "storage-files";
 
     private final File storageDirectory;
-    private final Cache<String, Resource> resourceCache = CacheBuilder.newBuilder().expireAfterAccess(30, TimeUnit.MINUTES).build();
+    private final Cache<String, ResponseEntity<Resource>> resourceCache = CacheBuilder.newBuilder().expireAfterAccess(30, TimeUnit.MINUTES).build();
 
     /**
      * Constructor for storage service
@@ -119,19 +121,39 @@ public abstract class ApiStorageService<DTO extends ApiStorageFileDTO,
 
     @Override
     @Transactional
-    public Resource loadAsResource(final String fileId) {
+    public ResponseEntity<Resource> loadAsResource(final String fileId) {
         final DTO fileDto = super.findById(fileId);
 
-        Resource resource = resourceCache.getIfPresent(fileId);
+        ResponseEntity<Resource> resource = resourceCache.getIfPresent(fileId);
         if (resource != null) {
             return resource;
         }
 
         try {
-            final Path filePath = Path.of(fileDto.getFilePath());
+            MediaType mediaType = MediaType.APPLICATION_OCTET_STREAM;
+            final String fileExtension = fileDto.getFileExtension();
 
-            resource = new ByteArrayResource(Files.readAllBytes(filePath));
-            resourceCache.put(fileId, resource);
+            if (fileExtension != null) {
+                switch (fileExtension.toLowerCase()) {
+                    case "jpg", "jpeg" -> mediaType = MediaType.IMAGE_JPEG;
+                    case "png" -> mediaType = MediaType.IMAGE_PNG;
+                    case "gif" -> mediaType = MediaType.IMAGE_GIF;
+                    case "pdf" -> mediaType = MediaType.APPLICATION_PDF;
+                    case "txt" -> mediaType = MediaType.TEXT_PLAIN;
+                    case "mp4" -> mediaType = MediaType.valueOf("video/mp4");
+                    case "mp3" -> mediaType = MediaType.valueOf("audio/mpeg");
+                    case "zip" -> mediaType = MediaType.valueOf("application/zip");
+                }
+            }
+
+            final Path filePath = Path.of(fileDto.getFilePath());
+            final Resource resourceData = new ByteArrayResource(Files.readAllBytes(filePath));
+
+            resource = ResponseEntity.ok()
+                    .contentType(mediaType)
+                    .body(resourceData);
+
+            this.resourceCache.put(fileId, resource);
             return resource;
         } catch (Exception e) {
             throw new ApiException(String.format("Le fichier %s n'a pas pu être chargé. Erreur: %s.", fileId, e.getMessage()), e);
