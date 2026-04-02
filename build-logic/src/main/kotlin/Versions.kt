@@ -1,5 +1,5 @@
 object Versions {
-    const val projectVersion = "1.4.3"
+    const val projectVersion = "1.4.4"
 
     // https://mvnrepository.com/artifact/org.mapstruct/mapstruct
     const val orgMapStructVersion = "1.6.3"

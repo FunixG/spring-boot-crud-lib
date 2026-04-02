@@ -5,17 +5,6 @@ updates:
     directory: "/"
     schedule:
       interval: "daily"
-    open-pull-requests-limit: 10
-    labels:
-      - "dependencies"
-
-  - package-ecosystem: "gradle"
-    directory: "/build-logic"
-    schedule:
-      interval: "daily"
-    open-pull-requests-limit: 10
-    labels:
-      - "dependencies"
 
   - package-ecosystem: "github-actions"
     directory: "/"

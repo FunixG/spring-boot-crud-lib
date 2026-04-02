@@ -4,7 +4,7 @@ plugins {
 }
 
 group = "dev.funixgaming.spring"
-version = "1.4.3"
+version = "1.4.4"
 
 repositories {
     gradlePluginPortal()
@@ -14,11 +14,11 @@ repositories {
 
 object Versions {
     // https://plugins.gradle.org/plugin/io.spring.dependency-management
-    const val springDependencyManagementPluginVersion = "1.1.0"
+    const val springDependencyManagementPluginVersion = "1.1.7"
     // https://spring.io/projects/spring-boot
-    const val springBootVersion = "4.0.2"
+    const val springBootVersion = "4.0.5"
     // https://plugins.gradle.org/plugin/org.flywaydb.flyway
-    const val flywayPluginVersion = "12.0.1"
+    const val flywayPluginVersion = "12.3.0"
 }
 
 dependencies {
