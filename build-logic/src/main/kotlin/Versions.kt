@@ -1,10 +1,10 @@
 object Versions {
-    const val projectVersion = "1.4.4"
+    const val projectVersion = "1.4.5"
 
     // https://mvnrepository.com/artifact/org.mapstruct/mapstruct
     const val orgMapStructVersion = "1.6.3"
     // https://mvnrepository.com/artifact/com.google.guava/guava
-    const val comGoogleGuavaVersion = "33.5.0-jre"
+    const val comGoogleGuavaVersion = "33.6.0-jre"
     // https://mvnrepository.com/artifact/org.imgscalr/imgscalr-lib
     const val imageScalerVersion = "4.2"
     // https://mvnrepository.com/artifact/com.google.code.gson/gson
