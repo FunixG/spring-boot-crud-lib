@@ -1,5 +1,5 @@
 object Versions {
-    const val projectVersion = "1.4.5"
+    const val projectVersion = "1.4.6"
 
     // https://mvnrepository.com/artifact/org.mapstruct/mapstruct
     const val orgMapStructVersion = "1.6.3"
@@ -8,9 +8,9 @@ object Versions {
     // https://mvnrepository.com/artifact/org.imgscalr/imgscalr-lib
     const val imageScalerVersion = "4.2"
     // https://mvnrepository.com/artifact/com.google.code.gson/gson
-    const val comGoogleGsonVersion = "2.13.2"
+    const val comGoogleGsonVersion = "2.14.0"
     // https://spring.io/projects/spring-cloud
-    const val springCloudVersion = "2025.1.1"
+    const val springCloudVersion = "2025.1.2"
     // https://mvnrepository.com/artifact/io.jsonwebtoken
     const val jjwtVersion = "0.13.0"
 }
